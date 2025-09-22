@@ -1,209 +1,179 @@
-# Reactfolio V1.2 👩🏽‍🚀
+# Personal Portfolio 🚀
 
-Reactfolio is a modern and customizable personal portfolio web template built using the popular React library. It provides an easy way for developers, designers, and creatives to showcase their work, skills, and achievements in a professiona and visually appealing way. With its responsive design and clean code, Reactfolio can be easily tailored to suit individual needs and preferences, making it an ideal choice for anyone looking to create a stunning online portfolio.
+A modern and responsive personal portfolio website built with React.js. This portfolio showcases projects, skills, experience, and articles in a clean and professional design.
 
-<center>
-<img src="https://cdn.tharindu.dev/reactfolio.jpg" alt="Reactfolio" />
-</center>
+🌍 **[Live Demo](https://your-portfolio-url.vercel.app)** - Check out the live website!
 
-Live demo here: <a href="https://reactfolio.tharindu.dev/" target="_blank">reactfolio.tharindu.dev</a>
+## ✨ Features
 
--   [Features](#-features)
--   [Getting started](#-getting-started)
--   [Installation and Setup Instructions](#-installation-and-setup-instructions)
--   [Folder structure](#-folder-structure)
--   [Configurations](#-configurations)
--   [Google Analytics](#-google-analytics)
--   [Building the React App](#-building-the-react-app)
--   [FAQ](#-faq)
--   [Contribution](#-contribution)
+- **Multi-Page Layout**: Home, About, Projects, Articles, and Contact pages
+- **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
+- **Modern Design**: Clean and professional UI with smooth animations
+- **SEO Optimized**: Built-in SEO configuration for better search engine visibility
+- **Fast Performance**: Optimized React components for quick loading
+- **Easy Customization**: Centralized configuration files for easy updates
 
-## 📙 Features
+## 🛠️ Technologies Used
 
--   📖 Multi-Page Layout
-    -   Home
-    -   About
-    -   Projects
-    -   Articles
-    -   Contact
--   📱 Fully Responsive
--   🛠 Easy configurations
+- **React.js** - Frontend framework
+- **React Router** - Client-side routing
+- **FontAwesome** - Icons and graphics
+- **CSS3** - Styling and animations
+- **Google Analytics** - Website analytics
+- **React Helmet** - SEO management
 
-## 📚 Getting started
+## 🚀 Quick Start
 
-Clone down this repository. You will need `NodeJS` and `git` installed globally on your machine.
+### Prerequisites
 
-## 🛠 Installation and Setup Instructions
+- Node.js (v14 or higher)
+- npm or yarn package manager
 
-1. Installation: `npm install`
+### Installation
 
-2. Run the project: `npm start`
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Gouravkumarpandey/portfolio.git
+   cd portfolio
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-The page will reload if you make edits.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-## 📁 Folder structure
+3. **Start the development server**
+   ```bash
+   npm start
+   ```
 
--   `/public`: publicly accessible contents (ex: images, media).
--   `/src`: all the components used in this project.
-    -   `/src/components/`: each reusable components of each pages.
-    -   `/src/data`: configurations of the web app.
-    -   `/src/pages`: pages that include in the web app.
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-## ⚙️ Configurations
+## 📁 Project Structure
 
-Since this is a public and open source project, you can make any changes to it. If you are a ReactJS developer you can do it easily. But if you are a beginner, I have extracted the configurable data into a single directory, so you can edit the files in that directory to configure the entire web application.
-
-Directory: `/src/data/`
-
--   `user.js`
-
-    From this you can change the content of each page of the web application.
-
--   `articles.js`
-
-    From this you can add your articles to the web application.
-
-    Instructions:
-
-    -   Add new article
-
-        1. Create a new function starts with `article_`. For example you can add new function named `article_3`.
-
-        2. Then add the data accordingly.
-
-            - Add `<React.Fragment>` tag and it's closing tags in body.
-            - In React there has no keyword `class`, so you should use `className` to define html classes.
-
-            ```js
-            function article_3() {
-            	return {
-            		date: "7 May 2025",
-            		title: "The Benefits of Cloud Computing",
-            		description: "Why businesses are turning to the cloud.",
-            		style: `
-            				.random-image {
-            					align-self: center;
-            					outline: 2px solid red;
-            				}
-            				`,
-            		body: (
-            			<React.Fragment>
-            				<div className="article-content">
-            					<div className="paragraph">
-            						Content of article 1
-            					</div>
-            					<img
-            						src="https://picsum.photos/200/300"
-            						alt="random"
-            						className="random-image"
-            					/>
-            				</div>
-            			</React.Fragment>
-            		),
-            	};
-            }
-            ```
-
-        3. In the last lines you will see an array to which you need to add your new `articles` function.
-
-            ```js
-            const myArticles = [article_1, article_2, article_3];
-            ```
-
--   `seo.js`
-
-    The SEO.js file is a module that contains an array of objects, with each object representing metadata for a specific page of a React website. The purpose of this file is to centralize and manage the SEO (Search Engine Optimization) information for different pages.
-
-    Each object in the SEO array has the following properties:
-
-    `page`: Represents the page name or identifier. It helps in mapping the SEO data to the appropriate page.
-
-    `title`: Specifies the title of the page. This title is typically displayed in the browser's title bar and is an important element for search engines.
-
-    `description`: Provides a concise and informative description of the page content. This description is often displayed in search engine results and can greatly influence click-through rates.
-    keywords: Contains an array of keywords relevant to the page's content. Keywords can help search engines understand the topics covered on the page and can impact its visibility in search results.
-    By storing the SEO information in the SEO.js file, you can easily manage and update the metadata for different pages of your React website. This approach allows you to keep the SEO data separate from the components and reuse it across the application, ensuring consistent and optimized metadata for each page.
-
-    Example:
-
-    ```js
-    const SEO = [
-    	{
-    		page: "home",
-    		description:
-    			"I am a backend developer with expertise in Node.js. I have experience in building scalable, secure and reliable web applications using various frameworks and technologies.",
-    		keywords: ["Tharindu", "Tharindu N", "Tharindu Nayanajith"],
-    	},
-    ];
-    ```
-
--   `styles.css`
-
-    From this you can change the font colors and font families of the web application.
-
-    ```css
-    :root {
-    	/* ------- colors ------- */
-    	--primary-color: #27272a;
-    	--secondary-color: #65656d;
-    	--tertiary-color: #acacb4;
-    	--quaternary-color: #e4e4e7;
-    	--link-color: #14b8a6;
-    	/* ---------------------- */
-
-    	/* ------- fonts ------- */
-    	--primary-font: "Heebo", sans-serif;
-    	--secondary-font: "Roboto", sans-serif;
-    	/* --------------------- */
-    }
-    ```
-
-## 📈 Google Analytics
-
-Add your Google Analytics 4 MEASUREMENT ID to `/src/data/tracking.js`.
-
-How to find the Google Analytics 4 MEASUREMENT ID ?
-
-[https://support.google.com/analytics/answer/9539598?hl=en](https://support.google.com/analytics/answer/9539598?hl=en)
-
-## 🚀 Building the React App
-
-To build the React app, you can use the `npm run build` command. This will create a production-ready build of your app in the `build/` directory.
-
-Here are the steps to follow:
-
-1. Open a terminal window and navigate to the root directory of your React app.
-2. Run the `npm run build` command to create a production build of your app. This will generate a static bundle of your app in the `build/` directory.
-3. Copy the contents of the `build/` directory to your server's public directory. You can do this using an FTP client or by running a command like `scp` to transfer the files to your server. Make sure to replace `example.com` and `/var/www/html` with your server's domain name and public directory, respectively:
-
-    ```bash
-    scp -r build/* user@example.com:/var/www/html
-    ```
-
-4. Your portfolio app should now be accessible from your server's domain name. You can verify this by opening a web browser and navigating to http://example.com (replace example.com with your server's domain name).
-
-That's it! Your React portfolio app should now be up and running on your server. Note that you may need to configure your server's web server (e.g., Apache or Nginx) to serve the index.html file in the build/ directory as the default page for your domain.
-
-## 🤔 FAQ
-
-**Q1. Subpages can only be accessed through links on the homepage or navigation bar, but those pages are not accessible through direct links.**
-
-If you are using Apache as your web server, you can insert this into your .htaccess file:
-
-```c
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-l
-  RewriteRule . /index.html [L]
-</IfModule>
+```
+├── public/                 # Static files
+│   ├── images/            # Image assets
+│   └── index.html         # HTML template
+├── src/
+│   ├── components/        # Reusable React components
+│   │   ├── about/         # About page components
+│   │   ├── articles/      # Article components
+│   │   ├── common/        # Shared components
+│   │   ├── homepage/      # Homepage components
+│   │   └── projects/      # Project components
+│   ├── data/              # Configuration files
+│   │   ├── user.js        # Personal information
+│   │   ├── articles.js    # Article content
+│   │   ├── seo.js         # SEO metadata
+│   │   └── styles.css     # Global styles
+│   ├── pages/             # Page components
+│   └── App.js             # Main app component
+└── package.json           # Project dependencies
 ```
 
-## 🌱 Contribution
+## ⚙️ Configuration
 
-If you have any suggestions on what to improve in Reactfolio and would like to share them, feel free to leave an issue or fork project to implement your own ideas
+### Personal Information (`src/data/user.js`)
+Update your personal details, experience, projects, and contact information.
+
+### Articles (`src/data/articles.js`)
+Add your blog posts and articles. Each article should follow this structure:
+
+```javascript
+function article_1() {
+    return {
+        date: "DD MMM YYYY",
+        title: "Your Article Title",
+        description: "Brief description of the article",
+        body: (
+            <React.Fragment>
+                {/* Your article content */}
+            </React.Fragment>
+        ),
+    };
+}
+```
+
+### SEO Settings (`src/data/seo.js`)
+Configure meta tags, descriptions, and keywords for each page.
+
+### Styling (`src/data/styles.css`)
+Customize colors, fonts, and other design elements:
+
+```css
+:root {
+    --primary-color: #27272a;
+    --secondary-color: #65656d;
+    --link-color: #14b8a6;
+    --primary-font: "Heebo", sans-serif;
+}
+```
+
+## 📊 Analytics
+
+Add Google Analytics tracking by updating your measurement ID in `src/data/tracking.js`.
+
+## 🏗️ Building for Production
+
+1. **Create a production build**
+   ```bash
+   npm run build
+   ```
+
+2. **Deploy the `build/` folder** to your hosting service
+
+3. **Configure your web server** to serve `index.html` for all routes (for single-page app routing)
+
+## 🔧 Available Scripts
+
+- `npm start` - Start development server
+- `npm run build` - Create production build
+- `npm test` - Run test suite
+- `npm run eject` - Eject from Create React App (one-way operation)
+
+## 🌐 Deployment
+
+### Current Deployment: Vercel ⚡
+
+This portfolio is currently deployed on **Vercel** with automatic deployments from the main branch.
+
+**Vercel Deployment Features:**
+- ✅ Automatic deployments on push to main
+- ✅ Preview deployments for pull requests
+- ✅ Global CDN for fast loading
+- ✅ Custom domain support
+- ✅ Built-in SSL certificates
+
+### Alternative Deployment Options:
+
+- **Netlify**: Drag and drop the `build/` folder
+- **GitHub Pages**: Use `gh-pages` package
+- **Traditional hosting**: Upload `build/` folder contents
+
+### Deploy to Vercel (Recommended)
+
+1. Fork this repository
+2. Sign up for a free [Vercel account](https://vercel.com)
+3. Connect your GitHub account
+4. Import your forked repository
+5. Vercel will automatically detect it's a React app and deploy it
+6. Your portfolio will be live with a `.vercel.app` domain
+7. Optionally, add a custom domain in the Vercel dashboard
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📧 Contact
+
+For any questions or suggestions, please reach out through the contact form on the website.
+
+---
+
+⭐ **Star this repository if it helped you!**
