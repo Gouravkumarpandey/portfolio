@@ -28,6 +28,20 @@ const SEO = [
 	},
 
 	{
+		page: "certifications",
+		description:
+			"Professional Certifications of Gourav Kumar Pandey. Includes AWS Certified Solutions Architect, Meta Full-Stack, IBM Blockchain, and other technical credentials.",
+		keywords: ["Gourav Kumar Pandey certifications", "AWS Certified", "Meta Full-Stack", "IBM Blockchain", "technical certifications", "professional credentials"],
+	},
+
+	{
+		page: "hackathons",
+		description:
+			"Hackathon Wins and Achievements of Gourav Kumar Pandey. Showcasing competitive programming victories, innovative solutions, and collaborative problem-solving experiences.",
+		keywords: ["Gourav Kumar Pandey hackathons", "hackathon winner", "IBM Hackathon", "competitive programming", "coding competitions", "innovation awards"],
+	},
+
+	{
 		page: "contact",
 		description:
 			"Get in touch with Gourav Kumar Pandey for collaboration on blockchain projects, full-stack development, or technical discussions. Open to new opportunities and ideas.",

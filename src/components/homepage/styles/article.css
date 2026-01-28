@@ -1,58 +1,81 @@
 @import "../../../data/styles.css";
 
+/* Notion-style article card */
 .homepage-article {
-	width: 90%;
-	mix-blend-mode: normal;
-	border-radius: 20px;
-	opacity: 0.8;
+	width: 100%;
+	background: var(--background-primary);
+	border: 1px solid var(--border-color);
+	border-radius: var(--radius-lg);
+	transition: all var(--transition-base);
+	box-shadow: var(--shadow-sm);
 }
 
 .homepage-article:hover {
-	background: #fafafa;
-	opacity: 1;
-	transition: background-color 0.3s ease-in-out;
+	box-shadow: var(--shadow-md);
+	transform: translateY(-2px);
+	border-color: var(--tertiary-color);
 }
 
 .homepage-article-content {
-	padding: 30px;
+	padding: var(--spacing-xl);
 }
 
 .homepage-article-date {
-	opacity: 1;
 	color: var(--tertiary-color);
-	font-size: 12px;
-	margin-bottom: 1em;
+	font-size: 13px;
+	margin-bottom: var(--spacing-sm);
+	font-weight: 500;
 }
 
 .homepage-article-title {
-	opacity: 1;
 	color: var(--primary-color);
-	font-size: 16px;
-	margin-bottom: 1em;
-	font-weight: 700;
+	font-size: 17px;
+	margin-bottom: var(--spacing-sm);
+	font-weight: 600;
+	line-height: 1.4;
+	transition: color var(--transition-fast);
+}
+
+.homepage-article:hover .homepage-article-title {
+	color: var(--link-color);
 }
 
 .homepage-article-description {
-	opacity: 1;
 	color: var(--secondary-color);
-	font-size: 12px;
-	line-height: 1.5;
+	font-size: 14px;
+	line-height: 1.6;
+	margin-bottom: var(--spacing-md);
 }
 
 .homepage-article-link {
-	opacity: 1;
-	padding-top: 20px;
-	font-size: 15px;
-	font-weight: 700;
+	padding-top: var(--spacing-md);
+	font-size: 14px;
+	font-weight: 500;
 }
 
 .homepage-article-link a {
 	color: var(--link-color);
 	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+	transition: all var(--transition-fast);
+}
+
+.homepage-article-link a:hover {
+	gap: var(--spacing-sm);
 }
 
 @media (max-width: 600px) {
-	.homepage-article {
-		width: 100%;
+	.homepage-article-content {
+		padding: var(--spacing-lg);
+	}
+
+	.homepage-article-title {
+		font-size: 16px;
+	}
+
+	.homepage-article-description {
+		font-size: 13px;
 	}
 }

@@ -1,0 +1,121 @@
+@import "../../data/styles.css";
+
+/* Section Navigation */
+.section-nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    animation: fadeInDown 0.6s ease-out;
+}
+
+.section-nav-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--radius-full);
+    padding: 8px 12px;
+    display: flex;
+    gap: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Dark mode support */
+[data-theme="dark"] .section-nav-container {
+    background: rgba(25, 25, 25, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-nav-item {
+    padding: 10px 20px;
+    border: none;
+    background: transparent;
+    color: var(--secondary-color);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: var(--radius-full);
+    transition: all var(--transition-base);
+    position: relative;
+    white-space: nowrap;
+}
+
+.section-nav-item:hover {
+    color: var(--primary-color);
+    background: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] .section-nav-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.section-nav-item.active {
+    color: var(--accent-color);
+    background: rgba(35, 131, 226, 0.1);
+    font-weight: 600;
+}
+
+[data-theme="dark"] .section-nav-item.active {
+    background: rgba(35, 131, 226, 0.15);
+}
+
+/* Fade in animation */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-nav {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        transform: none;
+    }
+
+    .section-nav-container {
+        padding: 6px 8px;
+        gap: 2px;
+        justify-content: space-between;
+    }
+
+    .section-nav-item {
+        padding: 8px 12px;
+        font-size: 13px;
+        flex: 1;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-nav-container {
+        padding: 4px 6px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE/Edge */
+    }
+
+    .section-nav-container::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari */
+    }
+
+    .section-nav-item {
+        padding: 6px 10px;
+        font-size: 12px;
+        flex-shrink: 0;
+    }
+}

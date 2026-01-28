@@ -62,6 +62,18 @@ const Contact = () => {
 						</div>
 					</div>
 
+					<div className="contact-video-container">
+						<video
+							autoPlay
+							loop
+							muted
+							playsInline
+							className="contact-video"
+						>
+							<source src="/reach.mp4" type="video/mp4" />
+						</video>
+					</div>
+
 					<div className="contact-form-section">
 						<ContactForm />
 					</div>

@@ -1,0 +1,124 @@
+@import "../../../data/styles.css";
+
+/* Notion-style dark mode toggle */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: var(--spacing-xl);
+    right: var(--spacing-xl);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--background-primary);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+    z-index: 1000;
+}
+
+.dark-mode-toggle:hover {
+    box-shadow: var(--shadow-lg);
+    transform: scale(1.05);
+    border-color: var(--tertiary-color);
+}
+
+.dark-mode-toggle:active {
+    transform: scale(0.95);
+}
+
+.dark-mode-icon {
+    font-size: 20px;
+    color: var(--secondary-color);
+    transition: all var(--transition-base);
+}
+
+.dark-mode-toggle:hover .dark-mode-icon {
+    color: var(--link-color);
+    transform: rotate(15deg);
+}
+
+/* Animation for theme switch */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.dark-mode-toggle.switching .dark-mode-icon {
+    animation: rotate 0.5s ease-in-out;
+}
+
+/* ========================================
+   RESPONSIVE DARK MODE TOGGLE
+   ======================================== */
+
+/* Tablet (< 1024px) */
+@media (max-width: 1024px) {
+    .dark-mode-toggle {
+        bottom: var(--spacing-lg);
+        right: var(--spacing-lg);
+    }
+}
+
+/* Tablet Portrait (< 768px) */
+@media (max-width: 768px) {
+    .dark-mode-toggle {
+        bottom: var(--spacing-md);
+        right: var(--spacing-md);
+        width: 46px;
+        height: 46px;
+    }
+
+    .dark-mode-icon {
+        font-size: 19px;
+    }
+}
+
+/* Mobile Landscape (< 600px) */
+@media (max-width: 600px) {
+    .dark-mode-toggle {
+        bottom: var(--spacing-sm);
+        right: var(--spacing-sm);
+        width: 44px;
+        height: 44px;
+    }
+
+    .dark-mode-icon {
+        font-size: 18px;
+    }
+}
+
+/* Mobile Portrait (< 480px) */
+@media (max-width: 480px) {
+    .dark-mode-toggle {
+        bottom: 12px;
+        right: 12px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .dark-mode-icon {
+        font-size: 17px;
+    }
+}
+
+/* Extra Small Devices (< 375px) */
+@media (max-width: 375px) {
+    .dark-mode-toggle {
+        bottom: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .dark-mode-icon {
+        font-size: 16px;
+    }
+}

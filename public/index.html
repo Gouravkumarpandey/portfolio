@@ -3,8 +3,22 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="theme-color" content="#000000" />
+		
+		<!-- Enhanced viewport for responsive design -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes, viewport-fit=cover" />
+		
+		<!-- Theme color for browser UI (updates with dark mode) -->
+		<meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)" />
+		<meta name="theme-color" content="#191919" media="(prefers-color-scheme: dark)" />
+		
+		<!-- Mobile web app capable -->
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+		
+		<!-- Prevent automatic phone number detection -->
+		<meta name="format-detection" content="telephone=no" />
+		
 		<title>Reactfolio</title>
 	</head>
 	<body>

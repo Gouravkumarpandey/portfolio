@@ -46,22 +46,22 @@
 	display: inline-flex;
 	align-items: center;
 	gap: 12px;
-	background-color: var(--secondary-color);
-	color: white;
+	background-color: var(--button-bg);
+	color: var(--button-text);
 	padding: 14px 28px;
 	border-radius: 8px;
 	text-decoration: none;
 	font-weight: 600;
 	font-size: 16px;
 	transition: all 0.3s ease;
-	border: 2px solid var(--secondary-color);
+	border: 2px solid var(--button-bg);
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
 }
 
 .about-resume-button:hover {
 	background-color: transparent;
-	color: var(--secondary-color);
+	color: var(--button-bg);
 	transform: translateY(-2px);
 	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }

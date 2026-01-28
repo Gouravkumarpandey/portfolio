@@ -88,9 +88,9 @@
 }
 
 .submit-button {
-	background-color: var(--secondary-color);
-	color: white;
-	border: 2px solid var(--secondary-color);
+	background-color: var(--button-bg);
+	color: var(--button-text);
+	border: 2px solid var(--button-bg);
 	padding: 14px 28px;
 	border-radius: 8px;
 	font-size: 16px;
@@ -108,7 +108,7 @@
 
 .submit-button:hover:not(:disabled) {
 	background-color: transparent;
-	color: var(--secondary-color);
+	color: var(--button-bg);
 	transform: translateY(-2px);
 	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
@@ -129,8 +129,13 @@
 }
 
 @keyframes spin {
-	from { transform: rotate(0deg); }
-	to { transform: rotate(360deg); }
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 .status-message {
@@ -160,22 +165,22 @@
 		margin: 20px 0;
 		padding: 20px;
 	}
-	
+
 	.form-row {
 		grid-template-columns: 1fr;
 		gap: 15px;
 	}
-	
+
 	.contact-form-header h2 {
 		font-size: 24px;
 	}
-	
+
 	.form-input,
 	.form-textarea {
 		font-size: 14px;
 		padding: 10px 12px;
 	}
-	
+
 	.submit-button {
 		padding: 12px 24px;
 		font-size: 14px;

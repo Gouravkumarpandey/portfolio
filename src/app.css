@@ -1,123 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import "/src/data/styles.css";
+@import "/src/styles/animations.css";
 
-::-webkit-scrollbar {
-	width: 10px;
+@layer base {
+
+	/* Notion-inspired custom scrollbar */
+	::-webkit-scrollbar {
+		@apply w-2 h-2;
+	}
+
+	::-webkit-scrollbar-track {
+		background-color: var(--background-secondary);
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: var(--tertiary-color);
+		@apply rounded transition-colors duration-base;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background-color: var(--secondary-color);
+	}
+
+	/* Smooth scrolling */
+	html {
+		@apply scroll-smooth;
+	}
+
+	/* Smooth theme transitions */
+	* {
+		transition: background-color var(--transition-base),
+			border-color var(--transition-base),
+			color var(--transition-base);
+	}
+
+	/* Disable transitions for elements that shouldn't animate */
+	*:focus,
+	*:active,
+	.no-transition {
+		transition: none !important;
+	}
 }
 
-::-webkit-scrollbar-track {
-	background-color: #f1f1f1;
-}
+@layer components {
 
-::-webkit-scrollbar-thumb {
-	background-color: #383636;
-	border-radius: 5px;
-}
+	/* Page content with Notion-style background */
+	.page-content {
+		@apply bg-bg-primary relative min-h-screen w-full;
+	}
 
-::-webkit-scrollbar-thumb:hover {
-	background-color: rgb(0, 0, 0);
-}
-
-.page-content {
-	background-color: white;
-	position: relative;
-}
-
-.page-content:before,
-.page-content:after {
-	content: "";
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	width: calc((100% - 1200px) / 2);
-	background-color: #fafafa;
-	border: 1px solid #f4f4f5;
-}
-
-.page-content:before {
-	left: 0;
-	z-index: 1;
-}
-
-.page-content:after {
-	right: 0;
-	z-index: 1;
-}
-
-.content-wrapper {
-	max-width: 1000px;
-	margin: 0 auto;
-}
-
-.title {
-	color: var(--primary-color);
-	font-family: var(--secondary-font);
-	font-size: 45px;
-	font-weight: 700;
-	width: 70%;
-}
-
-.subtitle {
-	padding-top: 10px;
-	color: var(--secondary-color);
-	font-size: 16px;
-	line-height: 28px;
-	width: 70%;
-	margin-top: 25px;
-}
-
-.page-footer {
-	position: block;
-}
-
-.page-footer::before {
-	content: "";
-	position: absolute;
-	left: 0;
-	right: 0;
-	border-top: 2px solid var(--tertiary-color);
-}
-
-@media (max-width: 1270px) {
+	/* Remove decorative sidebars */
 	.page-content:before,
 	.page-content:after {
-		width: calc((100% - 90%) / 2);
+		@apply hidden;
 	}
 
 	.content-wrapper {
-		max-width: 90%;
-		padding-left: 10%;
-		padding-right: 10%;
-	}
-}
-
-@media (max-width: 1024px) {
-	.page-content:before,
-	.page-content:after {
-		width: calc((100% - 950px) / 2);
+		@apply max-w-[1200px] w-full mx-auto px-2xl relative z-[2];
 	}
 
-	.content-wrapper {
-		max-width: 980px;
-	}
-}
-
-@media (max-width: 800px) {
-	.content-wrapper {
-		max-width: 90%;
-		margin: 0 auto;
-		padding: 0 10px;
-	}
-
-	.page-content:before,
-	.page-content:after {
-		display: none;
-	}
-
+	/* Notion-style typography */
 	.title {
-		width: 100%;
+		@apply text-primary font-secondary text-[48px] font-bold w-[70%] leading-[1.2] tracking-[-0.02em] mb-md;
 	}
 
 	.subtitle {
-		width: 100%;
+		@apply pt-md text-secondary text-[17px] leading-[1.6] w-[70%] mt-lg font-normal;
+	}
+
+	/* Page footer */
+	.page-footer {
+		@apply block mt-3xl;
+	}
+
+	.page-footer::before {
+		@apply content-[''] absolute left-0 right-0 border-t border-border;
+	}
+
+	/* Notion-style card component */
+	.notion-card {
+		@apply bg-bg-primary border border-border rounded-md p-lg transition-all duration-base shadow-sm;
+	}
+
+	.notion-card:hover {
+		@apply shadow-md -translate-y-0.5 border-tertiary;
+	}
+
+	/* Notion-style button */
+	.notion-button {
+		@apply inline-flex items-center gap-sm px-md py-sm bg-button-bg border border-button-bg rounded-sm text-button-text font-primary text-[14px] font-medium cursor-pointer transition-all duration-fast;
+	}
+
+	.notion-button:hover {
+		@apply bg-transparent border-button-bg text-button-bg;
+	}
+
+	.notion-button:active {
+		@apply scale-[0.98];
+	}
+
+	/* Notion-style link */
+	.notion-link {
+		@apply text-link no-underline border-b border-transparent transition-[border-color] duration-fast;
+	}
+
+	.notion-link:hover {
+		border-bottom-color: var(--link-color);
+	}
+
+	/* Notion-style tag */
+	.notion-tag {
+		@apply inline-flex items-center px-2 py-0.5 bg-bg-secondary rounded-sm text-[13px] font-medium text-secondary transition-all duration-fast;
+	}
+
+	.notion-tag:hover {
+		@apply bg-quaternary;
+	}
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - PROFESSIONAL PORTFOLIO
+   ======================================== */
+
+/* Large Desktop (1440px+) */
+@media (min-width: 1440px) {
+	.content-wrapper {
+		@apply max-w-[1200px] px-2xl;
+	}
+}
+
+/* Desktop (1024px - 1439px) */
+@media (max-width: 1439px) {
+	.content-wrapper {
+		@apply max-w-[1100px] px-2xl;
+	}
+}
+
+/* Laptop/Small Desktop (1024px - 1270px) */
+@media (max-width: 1270px) {
+	.content-wrapper {
+		@apply max-w-[1000px] px-xl;
+	}
+}
+
+/* Tablet Landscape (768px - 1024px) */
+@media (max-width: 1024px) {
+	.content-wrapper {
+		@apply max-w-[90%] px-lg;
+	}
+
+	.title {
+		@apply text-[40px] leading-[1.2];
+	}
+
+	.subtitle {
+		@apply text-[16px];
+	}
+}
+
+/* Tablet Portrait (600px - 768px) */
+@media (max-width: 768px) {
+	.content-wrapper {
+		@apply max-w-[95%] px-lg;
+	}
+
+	.title {
+		@apply w-full text-[32px];
+	}
+
+	.subtitle {
+		@apply w-full text-[15px];
+	}
+
+	.page-footer {
+		@apply mt-2xl;
+	}
+}
+
+/* Mobile Landscape / Large Phone (480px - 600px) */
+@media (max-width: 600px) {
+	.content-wrapper {
+		@apply max-w-full px-md;
+	}
+
+	.title {
+		@apply text-[28px];
+	}
+
+	.subtitle {
+		@apply text-[14px] leading-[1.5];
+	}
+}
+
+/* Mobile Portrait / Small Phone (< 480px) */
+@media (max-width: 480px) {
+	.content-wrapper {
+		@apply max-w-full px-md;
+	}
+
+	.title {
+		@apply text-[24px] mb-sm;
+	}
+
+	.subtitle {
+		@apply text-[13px] mt-sm;
+	}
+
+	.page-footer {
+		@apply mt-xl;
+	}
+}
+
+/* Extra Small Devices (< 375px) */
+@media (max-width: 375px) {
+	.content-wrapper {
+		@apply max-w-full px-sm;
+	}
+
+	.title {
+		@apply text-[22px];
+	}
+
+	.subtitle {
+		@apply text-[12px];
 	}
 }
