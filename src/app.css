@@ -62,13 +62,13 @@
 		@apply max-w-[1200px] w-full mx-auto px-2xl relative z-[2];
 	}
 
-	/* Notion-style typography */
+	/* Professional typography */
 	.title {
-		@apply text-primary font-secondary text-[48px] font-bold w-[70%] leading-[1.2] tracking-[-0.02em] mb-md;
+		@apply text-primary font-primary text-[48px] font-semibold w-[70%] leading-[1.2] tracking-tight mb-md;
 	}
 
 	.subtitle {
-		@apply pt-md text-secondary text-[17px] leading-[1.6] w-[70%] mt-lg font-normal;
+		@apply pt-md text-secondary text-[16px] leading-[1.6] w-[70%] mt-lg font-normal;
 	}
 
 	/* Page footer */
