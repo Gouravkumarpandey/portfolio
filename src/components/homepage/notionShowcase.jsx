@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/notionShowcase.css";
+
 
 const NotionShowcase = () => {
     return (

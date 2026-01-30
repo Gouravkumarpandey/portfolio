@@ -1,6 +1,6 @@
 import React from "react";
 import { FadeInUp, StaggerContainer, StaggerItem } from "../animations/FramerMotionComponents";
-import "./styles/hackathons.css";
+
 
 const Hackathon = ({ hackathon }) => {
     const { title, position, date, location, project, description, technologies, achievement, image } = hackathon;

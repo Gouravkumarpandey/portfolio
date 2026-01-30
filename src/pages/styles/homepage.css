@@ -10,13 +10,13 @@
 }
 
 .homepage-container {
-	padding-top: var(--spacing-lg);
+	padding-top: 120px;
 }
 
 /* Hero section with clean layout */
 .homepage-first-area {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	gap: var(--spacing-3xl);
 	margin-bottom: var(--spacing-3xl);
@@ -25,17 +25,22 @@
 .homepage-first-area-left-side {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
+	align-items: center;
+	text-align: center;
 	flex: 1;
+	max-width: 800px;
 }
 
 .homepage-title {
 	width: 100% !important;
+	text-align: center;
+	white-space: pre-line;
 	animation: fadeInUp 0.6s ease-out;
 }
 
 .homepage-subtitle {
 	width: 100% !important;
+	text-align: center;
 	animation: fadeInUp 0.8s ease-out;
 }
 
@@ -79,7 +84,7 @@
 /* Social icons with Notion-style hover */
 .homepage-socials {
 	display: flex;
-	justify-content: left;
+	justify-content: center;
 	align-items: center;
 	gap: var(--spacing-md);
 	padding-top: var(--spacing-xl);
@@ -229,6 +234,27 @@
 
 	.homepage-first-area {
 		gap: var(--spacing-lg);
+	}
+
+	/* Pyramid text styling for mobile */
+	.homepage-first-area-left-side {
+		text-align: center;
+		align-items: center;
+	}
+
+	.homepage-title {
+		text-align: center;
+		max-width: 100%;
+		line-height: 1.1;
+		word-spacing: 100vw;
+		/* Forces each word on new line */
+	}
+
+	.homepage-subtitle {
+		text-align: center;
+		max-width: 90%;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.homepage-image-container {

@@ -4,7 +4,7 @@ import { faBriefcase, faMapMarkerAlt, faCalendarAlt } from "@fortawesome/free-so
 
 import INFO from "../../data/user";
 
-import "./styles/experience.css";
+
 
 const Experience = () => {
 	// Safety check for experience data

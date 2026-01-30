@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane, faSpinner } from "@fortawesome/free-solid-svg-icons";
 
-import "./styles/contactForm.css";
+
 
 const ContactForm = () => {
 	const [formData, setFormData] = useState({

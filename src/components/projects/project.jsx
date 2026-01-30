@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
-import "./styles/project.css";
+
 
 const Project = (props) => {
 	const { logo, title, description, linkText, link, image, technologies, liveLink } = props;
@@ -30,9 +30,32 @@ const Project = (props) => {
 						{/* Technologies */}
 						{technologies && technologies.length > 0 && (
 							<div className="project-technologies">
-								{technologies.map((tech, index) => (
-									<span key={index} className="tech-badge">{tech}</span>
-								))}
+								{technologies.map((tech, index) => {
+									const getTechIcon = (techName) => {
+										const icons = {
+											"C": "/assets/C_Programming_Language.svg.png",
+											"C++": "/assets/C++_Logo.svg.png",
+											"Java": "/assets/java.png",
+										};
+										return icons[techName] || null;
+									};
+
+									const icon = getTechIcon(tech);
+
+									return (
+										<span key={index} className="tech-badge">
+											{icon && (
+												<img
+													src={icon}
+													alt={tech}
+													className="tech-icon"
+													style={{ width: '16px', height: '16px', marginRight: '6px', verticalAlign: 'middle' }}
+												/>
+											)}
+											{tech}
+										</span>
+									);
+								})}
 							</div>
 						)}
 

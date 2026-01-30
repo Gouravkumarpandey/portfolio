@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import './styles/scrollCanvas.css';
+
 
 /**
  * Interactive 2D Canvas that responds to scroll

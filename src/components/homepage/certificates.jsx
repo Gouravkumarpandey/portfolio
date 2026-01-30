@@ -1,6 +1,6 @@
 import React from "react";
 import { FadeInUp } from "../animations/FramerMotionComponents";
-import "./styles/certificates.css";
+
 
 const Certificate = ({ certificate }) => {
     const { title, issuer, date, credentialId, description, link, image } = certificate;

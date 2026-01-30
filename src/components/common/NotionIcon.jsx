@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/notionIcons.css";
+
 
 /**
  * Notion-style Icon Component

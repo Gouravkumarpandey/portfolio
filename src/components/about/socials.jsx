@@ -10,7 +10,7 @@ import {
 
 import INFO from "../../data/user";
 
-import "./styles/socials.css";
+
 
 const Socials = () => {
 	return (

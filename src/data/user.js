@@ -16,7 +16,7 @@ const INFO = {
   },
 
   homepage: {
-    title: "Software Engineer passionate about full-stack development.",
+    title: "Gourav Kumar Pandey\nFull-stack developer",
     description:
       "I am a Computer Science student pursuing my B.Tech degree from Arka Jain University, currently in my 7th semester, batch 2022–2026, with expertise in full-stack development. I have experience building scalable web applications using React, Node.js, and modern frameworks. My skills include JavaScript, Java, C++, React, Node.js, Spring Boot, MongoDB, and MySQL. I am passionate about creating secure, innovative solutions and continuously learning emerging technologies to solve complex problems.",
   },
