@@ -40,49 +40,17 @@ const Homepage = () => {
       </Helmet>
       <NavBar active="home" />
       <main className="min-h-screen w-full max-w-4xl mx-auto px-4 py-12 flex flex-col gap-12 bg-white">
-        {/* Hero Section */}
+        {/* Hero Section - Notion style */}
         <section className="flex flex-col items-center gap-6">
-          <figure className="w-full flex justify-center">
-            <img
-              src="homepage-hero-animation-lf.png"
-              alt="hero animation"
-              className="w-full max-w-2xl"
-            />
-          </figure>
+          <img
+            src="/homepage-hero-animation.png"
+            alt="Notion style hero faces"
+            style={{ width: '700px', maxWidth: '100%', marginBottom: '1.5rem' }}
+          />
           <header className="w-full flex flex-col items-center text-center gap-2">
-            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-2">
-              {INFO.homepage.title}
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl">
-              {INFO.homepage.description}
-            </p>
+            <h1 className="text-[40px] font-semibold leading-[1.2] tracking-tight text-[#111827] font-sans" style={{letterSpacing: '-0.01em', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif'}}>Gourav Kumar Pandey <br /> Full-stack developer</h1>
+            <p className="text-[16px] font-normal leading-[1.7] text-[#374151] max-w-3xl mt-4 font-sans" style={{fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif'}}>I am a Computer Science student pursuing my B.Tech degree from Arka Jain University, currently in my 7th semester, batch 2022–2026, with expertise in full-stack development. I have experience building scalable web applications using React, Node.js, and modern frameworks. My skills include JavaScript, Java, C++, React, Node.js, Spring Boot, MongoDB, and MySQL. I am passionate about creating secure, innovative solutions and continuously learning emerging technologies to solve complex problems.</p>
           </header>
-          {/* Social Links */}
-          <nav className="flex flex-row gap-4 justify-center mt-4" aria-label="Social Links">
-            {INFO.socials.twitter && (
-              <a href={INFO.socials.twitter} target="_blank" rel="noreferrer" className="hover:text-blue-500 transition-colors">
-                <svg width="24" height="24" viewBox="0 0 300 300" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="homepage-social-icon">
-                  <path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.4-116.59 81.8 116.59h89.34M36.01 19.54H76.66l187.13 262.13h-40.66" />
-                </svg>
-              </a>
-            )}
-            <a href={INFO.socials.github} target="_blank" rel="noreferrer" className="hover:text-gray-800 transition-colors">
-              <FontAwesomeIcon icon={faGithub} className="homepage-social-icon text-2xl" />
-            </a>
-            {INFO.socials.stackoverflow && (
-              <a href={INFO.socials.stackoverflow} target="_blank" rel="noreferrer" className="hover:text-orange-500 transition-colors">
-                <FontAwesomeIcon icon={faStackOverflow} className="homepage-social-icon text-2xl" />
-              </a>
-            )}
-            {INFO.socials.instagram && (
-              <a href={INFO.socials.instagram} target="_blank" rel="noreferrer" className="hover:text-pink-500 transition-colors">
-                <FontAwesomeIcon icon={faInstagram} className="homepage-social-icon text-2xl" />
-              </a>
-            )}
-            <a href={`mailto:${INFO.main.email}`} target="_blank" rel="noreferrer" className="hover:text-green-600 transition-colors">
-              <FontAwesomeIcon icon={faMailBulk} className="homepage-social-icon text-2xl" />
-            </a>
-          </nav>
         </section>
         {/* Skills Section */}
         <section className="w-full">

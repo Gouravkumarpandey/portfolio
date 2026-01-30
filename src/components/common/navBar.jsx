@@ -6,12 +6,12 @@ import DarkModeToggle from "./darkModeToggle";
 const NavBar = (props) => {
 	const { active } = props;
 
-	return (
-		<React.Fragment>
-			<div className="m-0 flex justify-center items-center">
-				<nav className="flex justify-center items-center fixed top-lg z-[999] animate-slideDown">
-					<div className="min-w-[400px] h-[44px] px-md bg-bg-primary backdrop-blur-[10px] shadow-md rounded-[50px] border border-border transition-all duration-base ease-smooth hover:shadow-lg hover:border-tertiary max-[768px]:min-w-0 max-[768px]:w-full max-[768px]:px-sm max-[600px]:h-[42px] max-[600px]:px-xs max-[480px]:h-[40px] max-[480px]:px-1 max-[375px]:h-[38px]">
-						<ul className="flex justify-around items-center list-none m-0 p-0 h-full gap-sm max-[768px]:gap-[2px] max-[600px]:gap-0">
+	       return (
+		       <React.Fragment>
+			       <div className="m-0 flex justify-center items-center">
+				       <nav className="flex justify-center items-center fixed top-lg z-[999] animate-slideDown">
+					       <div className="min-w-[400px] h-[44px] px-md bg-bg-primary backdrop-blur-[10px] shadow-md rounded-[50px] border border-border transition-all duration-base ease-smooth hover:shadow-lg hover:border-tertiary max-[768px]:min-w-0 max-[768px]:w-full max-[768px]:px-sm max-[600px]:h-[42px] max-[600px]:px-xs max-[480px]:h-[40px] max-[480px]:px-1 max-[375px]:h-[38px] flex items-center">
+						       <ul className="flex justify-around items-center list-none m-0 p-0 h-full gap-sm max-[768px]:gap-[2px] max-[600px]:gap-0">
 							<li
 								className={`font-medium text-[14px] relative max-[768px]:text-[13px] max-[600px]:text-[12px] max-[480px]:text-[11px] max-[375px]:text-[10px] ${active === "home" ? "active" : ""
 									}`}
